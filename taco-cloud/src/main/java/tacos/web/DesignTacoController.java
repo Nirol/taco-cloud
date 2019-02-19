@@ -16,9 +16,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 
 import lombok.extern.slf4j.Slf4j;
 import tacos.Taco;
+import tacos.User;
 import tacos.data.IngredientRepository;
 import tacos.data.TacoRepository;
 import tacos.Ingredient;
@@ -63,20 +65,20 @@ public class DesignTacoController {
 	  
 	  
 	  @GetMapping
-	  public String showDesignForm(Model model) {
-		  System.out.println("lol1");
+	  public String showDesignForm(Model model, @AuthenticationPrincipal User user) {
+	
 	    List<Ingredient> ingredients = new ArrayList<>();
 	    IngredientRepo.findAll().forEach(ing -> System.out.println(ing));
 	    
 	    IngredientRepo.findAll().forEach(i -> ingredients.add(i));
-	    ingredients.forEach(ing -> System.out.println(ing));
+	
 	    Type[] types = Ingredient.Type.values();
 	    for (Type type : types) {
 	      model.addAttribute(type.toString().toLowerCase(), 
 	          filterByType(ingredients, type));      
 	    }
 	    model.addAttribute("design", new Taco());
-
+	    model.addAttribute("user", user);
 	    return "design";
 	  }
 	  
