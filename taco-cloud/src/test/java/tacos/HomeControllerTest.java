@@ -18,8 +18,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import tacos.data.IngredientRepository;
 import tacos.data.OrderRepository;
-import tacos.data.TacoRepository;
-import tacos.web.WebConfig;;
+import tacos.data.TacoRepository;;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest
