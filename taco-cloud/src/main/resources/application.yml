@@ -1,0 +1,13 @@
+#server:
+# port: 8443
+# ssl:
+#  key-store: file:C:\Users\owner\git\taco-cloud\taco-cloud\src\main\resources\mykeys.jks
+#  key-store-password: omegaLUL
+#  key-password: omegaLUL
+#logging:
+#  file: TacoCloud.log
+#  level:
+#   root: WARN
+#   org:
+#    springframework:
+#      security: DEBUG
