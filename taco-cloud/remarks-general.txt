@@ -1,0 +1,4 @@
+1. When using Persisting data with Spring Data JPA, there few non obvious changes needed to be made:
+	a. data.sql need to be changed to import.sql
+	b. the insert into sql commends in import.sql need to be in the same line (one liner ) without newlines or they wont work!
+	
