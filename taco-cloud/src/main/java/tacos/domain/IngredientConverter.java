@@ -1,4 +1,4 @@
-package tacos;
+package tacos.domain;
 
 import java.util.ArrayList;
 import java.util.List;

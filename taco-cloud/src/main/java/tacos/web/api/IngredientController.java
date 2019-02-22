@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import tacos.Ingredient;
 import tacos.data.IngredientRepository;
+import tacos.domain.Ingredient;
 
 @RestController
-@RequestMapping(path="/ingredients", produces="application/json")
+@RequestMapping(path="/ingredientsx", produces="application/json")
 @CrossOrigin(origins="*")
 public class IngredientController {
 
